@@ -1,117 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="shortcut icon"
-      href="https://cdn-icons-png.flaticon.com/128/541/541589.png"
-      type="image/x-icon"
-    />
-    <link rel="shortcut icon" href="youtube.png" type="image/x-icon" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>AtenFLV</title>
-  </head>
-  <body>
-    <header id="header">
-      <h1 id="nombreSerie" class="elegantshadow">ATENFLV🎬</h1>
 
-      <br />
-      <button class="btn" onclick="verAnime()">Ver ATTACK ON TITAN</button>
-      <button class="btn" onclick="verOtro()">Ver DEMON SLAYER</button>
-    </header>
-    <hr />
-    <h1 id="episodio"></h1>
-    <section>
-      <br />
-      <div id="botones">
-        <form>
-          <input
-            type="number"
-            placeholder="Numero de episodio"
-            class="btnTxt"
-            id="episodioVer"
-          />
-        </form>
-        <button class="btn" onclick="cargarVideo()">Ver</button>
-        <div class="wrap">
-          <button onClick="siguiente()" class="btn">Siguiente episodio</button>
-        </div>
-        <div class="wrap">
-          <button onClick="anterior()" class="btn">Anterior episodio</button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/541/541589.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="youtube.png" type="image/x-icon" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>AtenFLV</title>
+</head>
+
+<body>
+  <header id="header">
+    <h1 id="nombreSerie" class="elegantshadow">ATENFLV🎬</h1>
+
+    <br />
+    <button class="btn" onclick="verAnime()">Ver ATTACK ON TITAN</button>
+    <button class="btn" onclick="verOtro()">Ver DEMON SLAYER</button>
+    <button class="btn" onclick="verPeli()">Ver MMILLENIUM ACTRESS</button>
+    <button class="btn" onclick="verPeli2()">Ver EL TIEMPO CONTIGO</button>
+    <button class="btn" onclick="verSerie()">Ver BANANA FISH</button>
+  </header>
+  <hr />
+  <h1 id="episodio"></h1>
+  <section>
+    <br />
+    <div id="botones">
+      <form>
+        <input type="number" placeholder="Numero de episodio" class="btnTxt" id="episodioVer" />
+      </form>
+      <button class="btn" onclick="cargarVideo()">Ver</button>
+      <div class="wrap">
+        <button onClick="siguiente()" class="btn">Siguiente episodio</button>
       </div>
+      <div class="wrap">
+        <button onClick="anterior()" class="btn">Anterior episodio</button>
+      </div>
+    </div>
+    <br />
+    <iframe width="800" height="360" id="mega" frameborder="0" allowfullscreen></iframe>
+  </section>
 
-      <iframe
-        width="800"
-        height="360"
-        id="mega"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </section>
+  <script type="text/javascript">
+    let iframe = document.getElementById("mega");
+    let contador = 0;
+    let miArray;
+    let nombreSerie = document.getElementById("nombreSerie");
+    function verAnime() {
+      nombreSerie.innerHTML = "Attack on titan";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "attack");
+      miArray = [
+        "https://mega.nz/embed/8wIjgaZA#OEnJ7hnZ-uMkd_DC1ZWA0kb3etvziTFJdhuVm5RBJg8",
+        "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
+      ];
+      contador = 0;
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function siguiente() {
+      iframe.setAttribute("src", miArray[contador + 1]);
+      contador++;
+      document.getElementById("episodio").innerHTML =
+        "Episodio " + (contador + 1) + "/" + miArray.length;
+    }
+    function anterior() {
+      iframe.setAttribute("src", miArray[contador - 1]);
+      document.getElementById("episodio").innerHTML =
+        "Episodio " + contador + "/" + miArray.length;
+      contador--;
+    }
 
-    <script type="text/javascript">
+    function cargarVideo() {
+      let num = document.getElementById("episodioVer").value;
+      if (num <= miArray.length) {
+        document.getElementById("episodio").innerHTML =
+          "Episodio " + num + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[num - 1]);
+      } else {
+        alert("error");
+      }
+    }
+    function verOtro() {
+      nombreSerie.innerHTML = "Demon Slayer⚡";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "kimetsu");
       let iframe = document.getElementById("mega");
-      let contador = 0;
-      let miArray;
-      let nombreSerie = document.getElementById("nombreSerie");
-      function verAnime() {
-        nombreSerie.innerHTML = "Attack on titan";
-        let header = document.getElementById("header");
-        header.setAttribute("class", "attack");
-        miArray = [
-          "https://mega.nz/embed/8wIjgaZA#OEnJ7hnZ-uMkd_DC1ZWA0kb3etvziTFJdhuVm5RBJg8",
-          "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
-        ];
-        contador = 0;
-        document.getElementById("episodio").innerHTML =
-          "Episodio 1" + "/" + miArray.length;
-        iframe.setAttribute("src", miArray[contador]);
-      }
-      function siguiente() {
-        iframe.setAttribute("src", miArray[contador + 1]);
-        contador++;
-        document.getElementById("episodio").innerHTML =
-          "Episodio " + (contador + 1) + "/" + miArray.length;
-      }
-      function anterior() {
-        iframe.setAttribute("src", miArray[contador - 1]);
-        document.getElementById("episodio").innerHTML =
-          "Episodio " + contador + "/" + miArray.length;
-        contador--;
-      }
+      contador = 0;
+      miArray = [
+        "https://mega.nz/embed/9sA2CLiT#5ppM7hqWxnuOS2mZymksN4XVN73uT8ZHSfEhqtmyT68",
+        "https://mega.nz/embed/YoJynRjA#NO4ZGoIBmM-oL5U5FzGpo8wxD-mJZAFQCIpzQ5_dNo0",
+        "https://mega.nz/embed/M8pSAIpK#Att79zt_B5AYWIoAsEQVZ9VZXaRwKqUBogUX9Sm1u90",
+        "https://mega.nz/embed/R1RgnbgA#vx3x6JbNbIc5EZn10ur4JxBni0f4oxLEL3eVcxW5HEg",
+        "https://mega.nz/embed/kwImQZ7J#FirExKcEKXg_Q_UmORXS_o6UL7UMIW_P4eAhsHyXUCw",
+        "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
+        "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verPeli() {
+      nombreSerie.innerHTML = "Millenium Actress";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "peli");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+        "https://mega.nz/embed/5w5i0AhC#DEUsBIpRLHjNOL5q6GvemypF0vWVkljL8lrzAqt5oIY",
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verSerie() {
+      nombreSerie.innerHTML = "Banana fish";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "serie");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+        "https://mega.nz/embed/9ssFyY5T#IctFBXFLfJINW-7buVGcdSjFN0XkyCczSZOBprCLaWs"
+        ,
+        "https://mega.nz/embed/h9NFyQDD#m-wUR7LbhKKn3YlaNZZqiUSxTG9smIGy6N5dQzHUbts"
 
-      function cargarVideo() {
-        let num = document.getElementById("episodioVer").value;
-        if (num <= miArray.length) {
-          document.getElementById("episodio").innerHTML =
-            "Episodio " + num + "/" + miArray.length;
-          iframe.setAttribute("src", miArray[num - 1]);
-        } else {
-          alert("error");
-        }
-      }
-      function verOtro() {
-        nombreSerie.innerHTML = "Demon Slayer⚡";
-        let header = document.getElementById("header");
-        header.setAttribute("class", "kimetsu");
-        let iframe = document.getElementById("mega");
-        contador = 0;
-        miArray = [
-          "https://mega.nz/embed/9sA2CLiT#5ppM7hqWxnuOS2mZymksN4XVN73uT8ZHSfEhqtmyT68",
-          "https://mega.nz/embed/YoJynRjA#NO4ZGoIBmM-oL5U5FzGpo8wxD-mJZAFQCIpzQ5_dNo0",
-          "https://mega.nz/embed/M8pSAIpK#Att79zt_B5AYWIoAsEQVZ9VZXaRwKqUBogUX9Sm1u90",
-          "https://mega.nz/embed/R1RgnbgA#vx3x6JbNbIc5EZn10ur4JxBni0f4oxLEL3eVcxW5HEg",
-          "https://mega.nz/embed/kwImQZ7J#FirExKcEKXg_Q_UmORXS_o6UL7UMIW_P4eAhsHyXUCw",
-          "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
-          "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
-        ];
-        document.getElementById("episodio").innerHTML =
-          "Episodio 1" + "/" + miArray.length;
-        iframe.setAttribute("src", miArray[contador]);
-      }
-    </script>
-  </body>
+        ,
+        "https://mega.nz/embed/x9Vz0SBI#XOm20fTry7EHqb7gsI4nsAQ0xBQRvo-wgfzvz-GEEcU"
+
+        ,
+        "https://mega.nz/embed/JtMDRCTS#rdKSIQhFjLEWMqlv1cI9OqlrlKTKkOvqiukxOhszTIw"
+        ,
+        "https://mega.nz/embed/llN1jCxC#AYQg6uAWzzyKawyLDfr5vsmAAKTHumjGxJbW1b_KnOM",
+        "https://mega.nz/embed/8gUDgYIa#GSK5Gu6ZitgsJh4kmI0FWUcZ5W0poJcsm10LF4rseb8"
+        ,
+        "https://mega.nz/embed/YpVXAAoY#U5t0ZGHikCgBWA76NQKApbgkTs5jCpCrvy2alI9gUJE"
+        ,
+        "https://mega.nz/embed/A5NngK4S#hAnZ28jAm3i_PcGA--NDR_StVpE0jEoiu8f7ySk9tJ0"
+        ,
+        "https://mega.nz/embed/E9MhTKBJ#KxId-uL6iZaWJ7-pldhmKg3lyg2STcRi1ci_GoTHHpI"
+        ,
+        "https://mega.nz/embed/JhMz3IwC#k6AzHBy4iLQPh-IoF5VffqPkFSpbc3su6WUg3oR9NUk"
+        ,
+        "https://mega.nz/embed/B8V1VAwI#L5O7w-tpOQXYW0bo303MQDQm1BN8NUErXu-P9tUlSLI"
+        ,
+        "https://mega.nz/embed/tlNTFa5C#Id7u7AdChdQiwMrwvji_LMvfhgRZvfM3lsNARjfy5Zw"
+        ,
+        "https://mega.nz/embed/d9chlIYS#Qz5oc0fFC_mfiMQZgdyjWwOWe666xN23TSNr78J4r44"
+        ,
+        "https://mega.nz/embed/FtV1hKoY#sEi0lrl-TjakKJrhOYc6lo1oz4KPlAX-jYYeAwTdHEg"
+        ,
+        "https://mega.nz/embed/VpcDmYra#kk8T8iJYEzma7WX_h4jhsiMbjJzx17APFLLvf6JMLR0"
+        ,
+        "https://mega.nz/embed/lxdBDCwI#29gtshtElEXdjaaFfAXbPZ2nZo0yf8lFCj2hBZJd0cc"
+        ,
+        "https://mega.nz/embed/t9cnxYKa#sKeZwnvKtIoUybS2mdSSDNuFOMCnWa_P9C8hCsa_qOY"
+        ,
+        "https://mega.nz/embed/k5dTWAYI#-SHZyPj60lBsX3yroJ2oXGIvcuKAYvH9-fVjUphft4I"
+        ,
+        "https://mega.nz/embed/ghMDkK6a#AndZcSKk7mCWbpIg7lv4yOAVPAX9sHxCzTMZJMZTyQ4"
+        ,
+        "https://mega.nz/embed/YsUhGAjS#Ui19lk9yAzV-foIq8Gc8cSnmv4nSOeJ1mjQvOTx8AZU"
+
+        ,
+        "https://mega.nz/embed/Q0MHhCRC#ohrdHPYQIR-aC9-B3jBFD6sBTQ5fd18k2qVqjglJGVI"
+
+        ,
+        "https://mega.nz/embed/80Nh2K6L#dl-zmCIAwnldfs0S2OBMhhk7FPaMhe0RQmxgjCg5UYU"
+
+        ,
+        "https://mega.nz/embed/CYxQWY7Q#OlpYVzZ8q6LL9J-CiId9xLOcXdMFMqYA2YFXmk1PfMk"
+
+        ,
+        "https://mega.nz/embed/9sEVDAAS#pGq7754st1iYKlowfORTeCR4r3WbP1RlfHQHDkqj_nQ"
+
+        ,
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verPeli2() {
+      nombreSerie.innerHTML = "El tiempo contigo";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "peli2");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+        "https://my.mail.ru/video/embed/9149163570439654893#tioanime#3565",
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+  </script>
+</body>
+
 </html>
