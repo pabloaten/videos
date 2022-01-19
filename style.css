@@ -6,7 +6,23 @@
 header{
   width: 100%;
   min-height: 100vh;
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://www.bing.com/th/id/OGC.8c56e8d4e449c92f249d20e3f8484da0?pid=1.7&rurl=https%3a%2f%2f64.media.tumblr.com%2fa3f0bbef3e96d0aa18840691e59dd786%2ftumblr_nczv02GXBB1r72ht7o1_500.gifv&ehk=k5xAYbQIjtyWa%2b%2bQ%2bp4dYkJuZ0hcrzC8arof9jaYk%2b4%3d");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.attack{
+  width: 100%;
+  min-height: 100vh;
   background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://th.bing.com/th/id/R.1b458cac8a5280bd96b96d175f90ce73?rik=r9%2b3Eyto3pG%2bQA&riu=http%3a%2f%2fmedia.giphy.com%2fmedia%2f9SvQFZ5xoGHza%2fgiphy.gif&ehk=nkR5GyYaILYPhXZ0W%2bt3nduTVteUvpENeTx0xOl1A00%3d&risl=&pid=ImgRaw&r=0");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.kimetsu{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://pa1.narvii.com/7233/33386fc2b69a725e0ebdb838bfd236149d707d50r1-622-382_hq.gif");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -229,7 +245,7 @@ input[type="range"]:focus::-ms-fill-upper {
   color: black;
 }
 hr {
-  width: 900px;
+  width: 100%;
   color: red;
   border-top: 5px solid red;
   border-bottom: none;
