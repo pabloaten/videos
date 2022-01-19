@@ -6,7 +6,7 @@
 header{
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://images7.alphacoders.com/418/thumbbig-418724.webp");
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://th.bing.com/th/id/R.1b458cac8a5280bd96b96d175f90ce73?rik=r9%2b3Eyto3pG%2bQA&riu=http%3a%2f%2fmedia.giphy.com%2fmedia%2f9SvQFZ5xoGHza%2fgiphy.gif&ehk=nkR5GyYaILYPhXZ0W%2bt3nduTVteUvpENeTx0xOl1A00%3d&risl=&pid=ImgRaw&r=0");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -20,6 +20,16 @@ h1 {
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
 }
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#botones{
+  display: flex;
+  justify-content:space-between;
+  width: 800px;
+}
 
 
 .wrap {
@@ -29,7 +39,22 @@ h1 {
   justify-content: center;
 
 }
-
+.btnTxt{
+  width: 300px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
 .btn {
   width: 140px;
   height: 45px;
