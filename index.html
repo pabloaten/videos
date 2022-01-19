@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="youtube.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Reproductor de Video</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="elegantshadow">ATTACK ON TITAN🎬</h1>
+
+      <br />
+    </header>
+    <hr />
+    <section>
+      <h1 id="episodio"></h1>
+      <form>
+        <input type="number"  id="episodioVer" />
+        <input type="submit" value="Ver" onClick="cargarVideo()" />
+      </form>
+      <div class="wrap">
+        <button onClick="siguiente()" class="btn">Siguiente episodio</button>
+      </div>
+      <div class="wrap">
+        <button onClick="anterior()" class="btn">Anterior episodio</button>
+      </div>
+      <iframe
+        width="640"
+        height="360"
+        id="mega"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <script type="text/javascript">
+      let iframe = document.getElementById("mega");
+      let contador = 0;
+      let miArray = [
+        "https://mega.nz/embed/gZIGlJLZ#DhTSkk4fRX07tn5RgcVP8WneaGwaI0hX9WezmW1IdIA",
+        "https://mega.nz/embed/kNoywQBK#MPu7IUZs7wXl4LMs0YHLP9vW1us4z7lmIDtELeURnfc",
+      ];
+      document.getElementById("episodio").innerHTML = "Episodio 1";
+      iframe.setAttribute("src", miArray[contador]);
+      function siguiente() {
+        iframe.setAttribute("src", miArray[contador + 1]);
+        contador++;
+        document.getElementById("episodio").innerHTML =
+          "Episodio " + (contador + 1);
+      }
+      function anterior() {
+        iframe.setAttribute("src", miArray[contador - 1]);
+        document.getElementById("episodio").innerHTML = "Episodio " + contador;
+        contador--;
+      }
+
+      function cargarVideo() {
+        let num = document.getElementById("episodioVer").value;
+        document.getElementById("episodio").innerHTML =
+          "Episodio " + (num);
+        iframe.setAttribute("src", miArray[num-1]);
+      }
+    </script>
+  </body>
+</html>
