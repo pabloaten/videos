@@ -13,14 +13,17 @@
 
 <body>
   <header id="header">
-    <h1 id="nombreSerie" class="elegantshadow">ATENFLV🎬</h1>
+    <h1 id="nombreSerie" class="elegantshadow">GLUTTONY TV</h1>
 
     <br />
-    <button class="btn" onclick="verAnime()">Ver ATTACK ON TITAN</button>
-    <button class="btn" onclick="verOtro()">Ver DEMON SLAYER</button>
-    <button class="btn" onclick="verPeli()">Ver MMILLENIUM ACTRESS</button>
-    <button class="btn" onclick="verPeli2()">Ver EL TIEMPO CONTIGO</button>
-    <button class="btn" onclick="verSerie()">Ver BANANA FISH</button>
+    <button class="btn" onclick="verAnime()">ATTACK ON TITAN</button>
+    <button class="btn" onclick="verOtro()">DEMON <br>SLAYER</button>
+    <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
+    <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
+    <button class="btn" onclick="verSerie()">BANANA<br> FISH</button>
+    <button class="btn" onclick="verCostura()">MY DRESS-UP DARLING</button>
+    <button class="btn" onclick="verJujutsu()">JUJUTSU<br> KAISEN</button>
+    <button class="btn" onclick="verSlime()"> ME CONVERTI EN SLIME</button>
   </header>
   <hr />
   <h1 id="episodio"></h1>
@@ -39,7 +42,7 @@
       </div>
     </div>
     <br />
-    <iframe width="800" height="360" id="mega" frameborder="0" allowfullscreen></iframe>
+    <iframe  id="mega" frameborder="0" allowfullscreen></iframe>
   </section>
 
   <script type="text/javascript">
@@ -189,6 +192,45 @@
       contador = 0;
       miArray = [
         "https://my.mail.ru/video/embed/9149163570439654893#tioanime#3565",
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verCostura() {
+      nombreSerie.innerHTML = "MY DRESS-UP DARLING🧵";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "costura");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+      "https://mega.nz/embed/x10EGZQb#hPyPkRupYPke6aZkNzeb1BTxhZaaDK59NM9nmGoVEo8","https://mega.nz/embed/st1SmJyI#xDpFOpR9g7eCjPO_9GmG_YyFOzrMOdUCQhbZGEQsUNc"
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verJujutsu() {
+      nombreSerie.innerHTML = "JUJUTSU KAISEN";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "jujutsu");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+      "https://mega.nz/embed/x10EGZQb#hPyPkRupYPke6aZkNzeb1BTxhZaaDK59NM9nmGoVEo8","https://mega.nz/embed/st1SmJyI#xDpFOpR9g7eCjPO_9GmG_YyFOzrMOdUCQhbZGEQsUNc"
+      ];
+      document.getElementById("episodio").innerHTML =
+        "Episodio 1" + "/" + miArray.length;
+      iframe.setAttribute("src", miArray[contador]);
+    }
+    function verSlime() {
+      nombreSerie.innerHTML = " ME REENCARNE EN UN SLIME 2º";
+      let header = document.getElementById("header");
+      header.setAttribute("class", "slime");
+      let iframe = document.getElementById("mega");
+      contador = 0;
+      miArray = [
+      
       ];
       document.getElementById("episodio").innerHTML =
         "Episodio 1" + "/" + miArray.length;
