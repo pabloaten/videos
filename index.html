@@ -1,288 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/128/541/541589.png"
+      type="image/x-icon"
+    />
+    <link rel="shortcut icon" href="youtube.png" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>AtenFLV</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/541/541589.png" type="image/x-icon" />
-  <link rel="shortcut icon" href="youtube.png" type="image/x-icon" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>AtenFLV</title>
-</head>
+  <body>
+    <header id="header">
+      <h1 id="nombreSerie" class="elegantshadow">GLUTTONY TV</h1>
 
-<body>
-  <header id="header">
-    <h1 id="nombreSerie" class="elegantshadow">GLUTTONY TV</h1>
+      <br />
+      <button class="btn" onclick="verAnime()">ATTACK ON TITAN</button>
+      <button class="btn" onclick="verOtro()">DEMON <br />SLAYER</button>
+      <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
 
-    <br />
-    <button class="btn" onclick="verAnime()">ATTACK ON TITAN</button>
-    <button class="btn" onclick="verOtro()">DEMON <br>SLAYER</button>
-    <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
-    <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
-    <button class="btn" onclick="verSerie()">BANANA<br> FISH</button>
-    <button class="btn" onclick="verCostura()">MY DRESS-UP DARLING</button>
-    <button class="btn" onclick="verJujutsu()">JUJUTSU<br> KAISEN</button>
-    <button class="btn" onclick="verSlime()"> ME CONVERTI EN SLIME</button>
-  </header>
-  <hr />
-  <h1 id="episodio"></h1>
-  <section>
-    <br />
-    <div id="botones">
-      <form>
-        <input type="number" placeholder="Numero de episodio" class="btnTxt" id="episodioVer" />
-      </form>
-      <button class="btn" onclick="cargarVideo()">Ver</button>
-      <div class="wrap">
-        <button onClick="siguiente()" class="btn">Siguiente episodio</button>
+      <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
+      <button class="btn" onclick="verGolden()">GOLDEN <br> BOY</button>
+      <button class="btn" onclick="verJujutsu()">
+        JUJUTSU<br />
+        KAISEN
+      </button>
+
+      <button class="btn" onclick="verSerie()">
+        BANANA<br />
+        FISH
+      </button>
+      <button class="btn" onclick="verCostura()">MY DRESS-UP DARLING</button>
+
+      <button class="btn" onclick="verSlime()">ME CONVERTI EN SLIME</button>
+      <button class="btn" onclick="verMotosierra()">
+        CHAINSAW<br />
+        MAN
+      </button>
+    </header>
+    <hr />
+    <h1 id="episodio"></h1>
+    <section>
+      <br />
+      <div id="botones">
+        <form>
+          <input
+            type="number"
+            placeholder="Numero de episodio"
+            class="btnTxt"
+            id="episodioVer"
+          />
+        </form>
+        <button class="btn" onclick="cargarVideo()">Ver</button>
+        <div class="wrap">
+          <button onClick="siguiente()" class="btn">Siguiente episodio</button>
+        </div>
+        <div class="wrap">
+          <button onClick="anterior()" class="btn">Anterior episodio</button>
+        </div>
       </div>
-      <div class="wrap">
-        <button onClick="anterior()" class="btn">Anterior episodio</button>
-      </div>
-    </div>
-    <br />
-    <iframe  id="mega" frameborder="0" allowfullscreen></iframe>
-  </section>
+      <br />
+      <iframe id="mega" frameborder="0" allowfullscreen></iframe>
+    </section>
 
-  <script type="text/javascript">
-    let iframe = document.getElementById("mega");
-    let contador = 0;
-    let miArray;
-    let nombreSerie = document.getElementById("nombreSerie");
-    function verAnime() {
-      nombreSerie.innerHTML = "Attack on titan";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "attack");
-      miArray = [
-        "https://mega.nz/embed/8wIjgaZA#OEnJ7hnZ-uMkd_DC1ZWA0kb3etvziTFJdhuVm5RBJg8",
-        "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
-      ];
-      contador = 0;
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function siguiente() {
-      iframe.setAttribute("src", miArray[contador + 1]);
-      contador++;
-      document.getElementById("episodio").innerHTML =
-        "Episodio " + (contador + 1) + "/" + miArray.length;
-    }
-    function anterior() {
-      iframe.setAttribute("src", miArray[contador - 1]);
-      document.getElementById("episodio").innerHTML =
-        "Episodio " + contador + "/" + miArray.length;
-      contador--;
-    }
-
-    function cargarVideo() {
-      let num = document.getElementById("episodioVer").value;
-      if (num <= miArray.length) {
+    <script type="text/javascript">
+      let iframe = document.getElementById("mega");
+      let contador = 0;
+      let miArray;
+      let nombreSerie = document.getElementById("nombreSerie");
+      function verAnime() {
+        nombreSerie.innerHTML = "Attack on titan";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "attack");
+        miArray = [
+          "https://mega.nz/embed/8wIjgaZA#OEnJ7hnZ-uMkd_DC1ZWA0kb3etvziTFJdhuVm5RBJg8",
+          "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
+        ];
+        contador = 0;
         document.getElementById("episodio").innerHTML =
-          "Episodio " + num + "/" + miArray.length;
-        iframe.setAttribute("src", miArray[num - 1]);
-      } else {
-        alert("error");
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
       }
-    }
-    function verOtro() {
-      nombreSerie.innerHTML = "Demon Slayer⚡";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "kimetsu");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-        "https://mega.nz/embed/9sA2CLiT#5ppM7hqWxnuOS2mZymksN4XVN73uT8ZHSfEhqtmyT68",
-        "https://mega.nz/embed/YoJynRjA#NO4ZGoIBmM-oL5U5FzGpo8wxD-mJZAFQCIpzQ5_dNo0",
-        "https://mega.nz/embed/M8pSAIpK#Att79zt_B5AYWIoAsEQVZ9VZXaRwKqUBogUX9Sm1u90",
-        "https://mega.nz/embed/R1RgnbgA#vx3x6JbNbIc5EZn10ur4JxBni0f4oxLEL3eVcxW5HEg",
-        "https://mega.nz/embed/kwImQZ7J#FirExKcEKXg_Q_UmORXS_o6UL7UMIW_P4eAhsHyXUCw",
-        "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
-        "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verPeli() {
-      nombreSerie.innerHTML = "Millenium Actress";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "peli");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-        "https://mega.nz/embed/5w5i0AhC#DEUsBIpRLHjNOL5q6GvemypF0vWVkljL8lrzAqt5oIY",
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verSerie() {
-      nombreSerie.innerHTML = "Banana fish";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "serie");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-        "https://mega.nz/embed/9ssFyY5T#IctFBXFLfJINW-7buVGcdSjFN0XkyCczSZOBprCLaWs"
-        ,
-        "https://mega.nz/embed/h9NFyQDD#m-wUR7LbhKKn3YlaNZZqiUSxTG9smIGy6N5dQzHUbts"
+      function siguiente() {
+        iframe.setAttribute("src", miArray[contador + 1]);
+        contador++;
+        document.getElementById("episodio").innerHTML =
+          "Episodio " + (contador + 1) + "/" + miArray.length;
+      }
+      function anterior() {
+        iframe.setAttribute("src", miArray[contador - 1]);
+        document.getElementById("episodio").innerHTML =
+          "Episodio " + contador + "/" + miArray.length;
+        contador--;
+      }
 
-        ,
-        "https://mega.nz/embed/x9Vz0SBI#XOm20fTry7EHqb7gsI4nsAQ0xBQRvo-wgfzvz-GEEcU"
+      function cargarVideo() {
+        let num = document.getElementById("episodioVer").value;
+        if (num <= miArray.length) {
+          document.getElementById("episodio").innerHTML =
+            "Episodio " + num + "/" + miArray.length;
+          iframe.setAttribute("src", miArray[num - 1]);
+        } else {
+          alert("error");
+        }
+      }
+      function verOtro() {
+        nombreSerie.innerHTML = "Demon Slayer⚡";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "kimetsu");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/9sA2CLiT#5ppM7hqWxnuOS2mZymksN4XVN73uT8ZHSfEhqtmyT68",
+          "https://mega.nz/embed/YoJynRjA#NO4ZGoIBmM-oL5U5FzGpo8wxD-mJZAFQCIpzQ5_dNo0",
+          "https://mega.nz/embed/M8pSAIpK#Att79zt_B5AYWIoAsEQVZ9VZXaRwKqUBogUX9Sm1u90",
+          "https://mega.nz/embed/R1RgnbgA#vx3x6JbNbIc5EZn10ur4JxBni0f4oxLEL3eVcxW5HEg",
+          "https://mega.nz/embed/kwImQZ7J#FirExKcEKXg_Q_UmORXS_o6UL7UMIW_P4eAhsHyXUCw",
+          "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
+          "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verPeli() {
+        nombreSerie.innerHTML = "Millenium Actress";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "peli");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/5w5i0AhC#DEUsBIpRLHjNOL5q6GvemypF0vWVkljL8lrzAqt5oIY",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verGolden() {
+        nombreSerie.innerHTML = "GOLDEN BOY";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "golden");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+        "https://mega.nz/embed/2mxizYpb#AF1VUgCs1XGnoxNO3FC7uwB8ziUAL2vop1xPntw5J28",
+        "https://mega.nz/embed/PvxxAC5T#AIhbywAMH5HDov7EY-F29wCniVIAQVLhw9vPxmM_yq4",
+        "https://mega.nz/embed/eyBC0BSJ#AN-gsgDOkSF9CFKf17Qf7AAfu8sAQO_yfcbCf9eJ4CA",
+        "https://mega.nz/embed/SqgHVJ4J#ABkrlgBOjAeMgxx1Sz0p5QAQNM8ARBH9jOKP8EtWip8",
+        "https://mega.nz/embed/uyACXYrD#AFyNeQB5tbLMADvCwEmhEQBe2lgAYip-zNfjO8CkvR8",
+        "https://mega.nz/embed/rrwFXIxS#W8UjF_G7xYZl4LsMXW9lgo34B0xnHeu_2SAPXIfIl-I"
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verSerie() {
+        nombreSerie.innerHTML = "Banana fish";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "serie");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/9ssFyY5T#IctFBXFLfJINW-7buVGcdSjFN0XkyCczSZOBprCLaWs",
+          "https://mega.nz/embed/h9NFyQDD#m-wUR7LbhKKn3YlaNZZqiUSxTG9smIGy6N5dQzHUbts",
 
-        ,
-        "https://mega.nz/embed/JtMDRCTS#rdKSIQhFjLEWMqlv1cI9OqlrlKTKkOvqiukxOhszTIw"
-        ,
-        "https://mega.nz/embed/llN1jCxC#AYQg6uAWzzyKawyLDfr5vsmAAKTHumjGxJbW1b_KnOM",
-        "https://mega.nz/embed/8gUDgYIa#GSK5Gu6ZitgsJh4kmI0FWUcZ5W0poJcsm10LF4rseb8"
-        ,
-        "https://mega.nz/embed/YpVXAAoY#U5t0ZGHikCgBWA76NQKApbgkTs5jCpCrvy2alI9gUJE"
-        ,
-        "https://mega.nz/embed/A5NngK4S#hAnZ28jAm3i_PcGA--NDR_StVpE0jEoiu8f7ySk9tJ0"
-        ,
-        "https://mega.nz/embed/E9MhTKBJ#KxId-uL6iZaWJ7-pldhmKg3lyg2STcRi1ci_GoTHHpI"
-        ,
-        "https://mega.nz/embed/JhMz3IwC#k6AzHBy4iLQPh-IoF5VffqPkFSpbc3su6WUg3oR9NUk"
-        ,
-        "https://mega.nz/embed/B8V1VAwI#L5O7w-tpOQXYW0bo303MQDQm1BN8NUErXu-P9tUlSLI"
-        ,
-        "https://mega.nz/embed/tlNTFa5C#Id7u7AdChdQiwMrwvji_LMvfhgRZvfM3lsNARjfy5Zw"
-        ,
-        "https://mega.nz/embed/d9chlIYS#Qz5oc0fFC_mfiMQZgdyjWwOWe666xN23TSNr78J4r44"
-        ,
-        "https://mega.nz/embed/FtV1hKoY#sEi0lrl-TjakKJrhOYc6lo1oz4KPlAX-jYYeAwTdHEg"
-        ,
-        "https://mega.nz/embed/VpcDmYra#kk8T8iJYEzma7WX_h4jhsiMbjJzx17APFLLvf6JMLR0"
-        ,
-        "https://mega.nz/embed/lxdBDCwI#29gtshtElEXdjaaFfAXbPZ2nZo0yf8lFCj2hBZJd0cc"
-        ,
-        "https://mega.nz/embed/t9cnxYKa#sKeZwnvKtIoUybS2mdSSDNuFOMCnWa_P9C8hCsa_qOY"
-        ,
-        "https://mega.nz/embed/k5dTWAYI#-SHZyPj60lBsX3yroJ2oXGIvcuKAYvH9-fVjUphft4I"
-        ,
-        "https://mega.nz/embed/ghMDkK6a#AndZcSKk7mCWbpIg7lv4yOAVPAX9sHxCzTMZJMZTyQ4"
-        ,
-        "https://mega.nz/embed/YsUhGAjS#Ui19lk9yAzV-foIq8Gc8cSnmv4nSOeJ1mjQvOTx8AZU"
+          "https://mega.nz/embed/x9Vz0SBI#XOm20fTry7EHqb7gsI4nsAQ0xBQRvo-wgfzvz-GEEcU",
 
-        ,
-        "https://mega.nz/embed/Q0MHhCRC#ohrdHPYQIR-aC9-B3jBFD6sBTQ5fd18k2qVqjglJGVI"
+          "https://mega.nz/embed/JtMDRCTS#rdKSIQhFjLEWMqlv1cI9OqlrlKTKkOvqiukxOhszTIw",
+          "https://mega.nz/embed/llN1jCxC#AYQg6uAWzzyKawyLDfr5vsmAAKTHumjGxJbW1b_KnOM",
+          "https://mega.nz/embed/8gUDgYIa#GSK5Gu6ZitgsJh4kmI0FWUcZ5W0poJcsm10LF4rseb8",
+          "https://mega.nz/embed/YpVXAAoY#U5t0ZGHikCgBWA76NQKApbgkTs5jCpCrvy2alI9gUJE",
+          "https://mega.nz/embed/A5NngK4S#hAnZ28jAm3i_PcGA--NDR_StVpE0jEoiu8f7ySk9tJ0",
+          "https://mega.nz/embed/E9MhTKBJ#KxId-uL6iZaWJ7-pldhmKg3lyg2STcRi1ci_GoTHHpI",
+          "https://mega.nz/embed/JhMz3IwC#k6AzHBy4iLQPh-IoF5VffqPkFSpbc3su6WUg3oR9NUk",
+          "https://mega.nz/embed/B8V1VAwI#L5O7w-tpOQXYW0bo303MQDQm1BN8NUErXu-P9tUlSLI",
+          "https://mega.nz/embed/tlNTFa5C#Id7u7AdChdQiwMrwvji_LMvfhgRZvfM3lsNARjfy5Zw",
+          "https://mega.nz/embed/d9chlIYS#Qz5oc0fFC_mfiMQZgdyjWwOWe666xN23TSNr78J4r44",
+          "https://mega.nz/embed/FtV1hKoY#sEi0lrl-TjakKJrhOYc6lo1oz4KPlAX-jYYeAwTdHEg",
+          "https://mega.nz/embed/VpcDmYra#kk8T8iJYEzma7WX_h4jhsiMbjJzx17APFLLvf6JMLR0",
+          "https://mega.nz/embed/lxdBDCwI#29gtshtElEXdjaaFfAXbPZ2nZo0yf8lFCj2hBZJd0cc",
+          "https://mega.nz/embed/t9cnxYKa#sKeZwnvKtIoUybS2mdSSDNuFOMCnWa_P9C8hCsa_qOY",
+          "https://mega.nz/embed/k5dTWAYI#-SHZyPj60lBsX3yroJ2oXGIvcuKAYvH9-fVjUphft4I",
+          "https://mega.nz/embed/ghMDkK6a#AndZcSKk7mCWbpIg7lv4yOAVPAX9sHxCzTMZJMZTyQ4",
+          "https://mega.nz/embed/YsUhGAjS#Ui19lk9yAzV-foIq8Gc8cSnmv4nSOeJ1mjQvOTx8AZU",
 
-        ,
-        "https://mega.nz/embed/80Nh2K6L#dl-zmCIAwnldfs0S2OBMhhk7FPaMhe0RQmxgjCg5UYU"
+          "https://mega.nz/embed/Q0MHhCRC#ohrdHPYQIR-aC9-B3jBFD6sBTQ5fd18k2qVqjglJGVI",
 
-        ,
-        "https://mega.nz/embed/CYxQWY7Q#OlpYVzZ8q6LL9J-CiId9xLOcXdMFMqYA2YFXmk1PfMk"
+          "https://mega.nz/embed/80Nh2K6L#dl-zmCIAwnldfs0S2OBMhhk7FPaMhe0RQmxgjCg5UYU",
 
-        ,
-        "https://mega.nz/embed/9sEVDAAS#pGq7754st1iYKlowfORTeCR4r3WbP1RlfHQHDkqj_nQ"
+          "https://mega.nz/embed/CYxQWY7Q#OlpYVzZ8q6LL9J-CiId9xLOcXdMFMqYA2YFXmk1PfMk",
 
-        ,
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verPeli2() {
-      nombreSerie.innerHTML = "El tiempo contigo";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "peli2");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-        "https://my.mail.ru/video/embed/9149163570439654893#tioanime#3565",
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verCostura() {
-      nombreSerie.innerHTML = "MY DRESS-UP DARLING🧵";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "costura");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-      "https://mega.nz/embed/x10EGZQb#hPyPkRupYPke6aZkNzeb1BTxhZaaDK59NM9nmGoVEo8","https://mega.nz/embed/st1SmJyI#xDpFOpR9g7eCjPO_9GmG_YyFOzrMOdUCQhbZGEQsUNc"
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verJujutsu() {
-      nombreSerie.innerHTML = "JUJUTSU KAISEN";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "jujutsu");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-      "https://mega.nz/embed/Mh803CYY#oeFqN_bWjgGhAq6TGbIM4X2Dw6CXJc3JgnPy31RJfL4",
-      "https://mega.nz/embed/5llwQKaA#OdKNKona2aV1yZcDKTYzTkKMOmVP-bFnyQfdb9iddv8",
-      "https://mega.nz/embed/s50Q2Cjb#lLSDMVH25Z5vzKq_xw-L6jX0xWTgbf3CK7CzH4aZ8Ns",
-      "https://mega.nz/embed/0t9i2AxT#9CRdTUt7AkTjVmKlvBAWOaAIsJAL_ACgzekSJCI0gCM",
-      "https://mega.nz/embed/8x0inIZY#dZdddU55vtSY5704yO_u9Z6NTMm6CHmcmn1nQQZNLt4",
-      "https://mega.nz/embed/o9tAjYaL#wbaoS31koqGChB47jZj3sIfaHmVkrnlRHcqn6-cz3Ko",
-      "https://mega.nz/embed/YhtSSArT#R5-tZ_yfoP3u4Ffoxd_HDknV2MQ6qTRIt_CXJXE2C_g",
-      "https://mega.nz/embed/998ikYIT#4UH5GYQyTiMblvGZ_OXdcs5jmGJmHFPxsDv59gW6Ypc",
-      "https://mega.nz/embed/Mk9WCaQT#5Bvba_WXYS0zMAvfOz2HmhcCgvlW9xlHR7T0Q0Pi4Ls",
-      "https://mega.nz/embed/5t0igYRD#ie9MaB1vaXV1WKbM_XDgPYyFh3RKQ0XIHvVfd_4du9M",
-      "https://mega.nz/embed/ltkmBAqD#P5BObYODfPm3as45YZUOJRtUupD87VBkquNW9UvbQFE",
-      "https://mega.nz/embed/50kAnSAB#VxyH-SrN2LR0aWsw6P5CJOjzjtzt9Ah-lm2qjbVNJlI",
-      "https://mega.nz/embed/09kQnYiZ#14AZ9XrK2qx6iMasyrsT5Nu3TtMUCHYigsXFW6iJe8I",
-      "https://mega.nz/embed/ow90wQ5R#rYdm4TJARpv_UtMB8UzPBkMu2LyqvdLbOGq9WchaDuY",
-      "https://mega.nz/embed/IhkUiKgQ#HzmYptFlZQAlRLXC1HJKcZCQjJ5BsVlsOsMW0DQOeEE",
-      "https://mega.nz/embed/8kkwQAZR#wCyVXnv_ZkWxa2bp1WRk7t2S7CRldxaxS9EIYpC8jjM",
-      "https://mega.nz/embed/Ixki1agB#FGHdDJmfrdoOKHsKB5HOGO9VG9D7fBbECYpjf41HoKI",
-      "https://mega.nz/embed/Ux9Sxazb#1OQ4J7c_KcQCMi6DXW8_NXZS_G1ssHbEECTenfXgdoc",
-      "https://mega.nz/embed/UktW1Q6A#mebhry3zG7wfpB21JT0vJR9-E6kjEAIlRE_pjrvmdWU",
-      "https://mega.nz/embed/8k8WlSzY#cJQ5Tj0qwzw3ms-DOuIoVUrr73i_55L76zGfCOLgFGU",
-      "https://mega.nz/embed/Nwl0HYQb#at4VsKdfrHjITqzVkyTK4ncbNC_j0RJ91UlS5IjrjPM",
-      "https://mega.nz/embed/Zh0yTSxL#vmk0mQN112N1i5Ve1d1U4GO3SVjSF-xpE5-E3s9K6aw",
-      "https://mega.nz/embed/wx1yBKga#bZ18bzefhbud4CkUA25Vq8JY5wHPkN9jnrOzDIpK7nc",
-      "https://mega.nz/embed/totk0ABL#GrL0QA0AtVtErAmCJjU1rWBb6MswW4V5TE7fpcr1xDA"  
-    ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-    function verSlime() {
-      nombreSerie.innerHTML = " ME REENCARNE EN UN SLIME 2º";
-      let header = document.getElementById("header");
-      header.setAttribute("class", "slime");
-      let iframe = document.getElementById("mega");
-      contador = 0;
-      miArray = [
-      "https://mega.nz/embed/t51HDYDa#d3QSXPGycnkfU79G8nn1DZaKXnr5K4B_tcHiDHkdC7U",
-      "https://mega.nz/embed/Yh8VVCTY#834zlkG3mNhYYDXU_oc0S6iynmp0ydo9DlEHE9-irE0",
-      "https://mega.nz/embed/4oVUSZbD#dv0CXo2xMVVlTeXefMEl34YP9zHjZN9Wl98hGkQrqco",
-      "https://mega.nz/embed/ph1nVayR#YYIZvOUxfZYDtmQOw0djjrwdCDDq-FVm1q1mDgS6kaU",
-      "https://mega.nz/embed/Vh0j2aCC#JlN4pGrWnqYJfbPIfrIp264gn2YYHTdt7wJasakEdX4",
-      "https://mega.nz/embed/4hlRQQRJ#3eog1qmXdNm8GPTVuuI24HsY6EFeW3naVZfBoteW6iE",
-      "https://mega.nz/embed/Q9EkgLIb#juWxhiFEQ-Ur769FE41JcKulhHhPAriH0mZ6BTVpVSo",
-      "https://mega.nz/embed/pg8F1Yqa#BqSMv6Rhg0VVZ1iqDY6hTUErtmOj4AUX8eg9NrnEjLM",
-      "https://mega.nz/embed/Ul0wQQRb#C64zMzHfL2zyOD9vaa0aIU55CkQmw5aAfnkY8NEuwhc",
-      "https://mega.nz/embed/p59niQDC#5I6E7unA8ZdxvUQwfo7GTzKCTfl64zBzzDDf3jDrpIM",
-      "https://mega.nz/embed/408xlIaI#VF96FnbKiXFUyyNOl7j1LHyEQ-LRWaXmD2Eqjh8qXIo",
-      "https://mega.nz/embed/9kkH0ITI#Atb4-vLZvIwGUPWA42fVbAtsqvkhFx-aI7bIHW6IIVk",
-      "https://mega.nz/embed/y9Z02D5a#rTHQUoX9-eMCKfwhj2Jw5gmyEhizMjGW3NX9BQr3MZE",
-      "https://mega.nz/embed/0g82BQrC#ttqjIYeUCF0mIK-sLDHggflTgYCv2PhMbd2Xyd3hHrU",
-      "https://mega.nz/embed/SkQAQJgC#DyfTXR77KeVA9fmvoDMflPqRGLqEEzWUo3rmaX9J9r8",
-      "https://mega.nz/embed/GsIQgLqS#MfIVGaO59MdQCvyuKsroEeScb5rfy0lZ5gkSrm0i_W8",
-      "https://mega.nz/embed/OxJkEJCC#zv7o_4lU0M4ciD9JhxIEZDMRfWTJJLTy_VlsqTi4bzg",
-      "https://mega.nz/embed/KkJWAZTA#QSSxsvrvVpCmdy4XALIC4AwEVT4Q7aVeuTxC2bwOQC4",
-      "https://mega.nz/embed/j4AmUbyY#IxbDo8Ig9HypbxJLQMMwjIovyY5oKmhSldXJvu2h7Bg",
-      "https://mega.nz/embed/XgRi2RTJ#93R-R2PVaDvp3Rjud6S3eGhuheS902c4KL71HYIQtj0",
-      "https://mega.nz/embed/PlJimRRI#pS_FvS_o9V0VumGMI_0oBJwKDb_gbqUv8a2IQ9GqEzQ",
-      "https://mega.nz/embed/7xAwjJIK#zz8rxorNLF7FlSFbVUAYb1G3oc78pP0bTzbGDEjp_rg",
-      "https://mega.nz/embed/m8JkHBBT#zhxogdVQdLf3wftsB-HfndgYf83fbBQGVLeIJxAaOuc",
-      "https://mega.nz/embed/LpJE0RwR#VXDvNlrm1bBRxknC-I-tjBSt_gK57B-Hafo3kybNBHw"
-      ];
-      document.getElementById("episodio").innerHTML =
-        "Episodio 1" + "/" + miArray.length;
-      iframe.setAttribute("src", miArray[contador]);
-    }
-  </script>
-</body>
-
+          "https://mega.nz/embed/9sEVDAAS#pGq7754st1iYKlowfORTeCR4r3WbP1RlfHQHDkqj_nQ",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verPeli2() {
+        nombreSerie.innerHTML = "El tiempo contigo";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "peli2");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://my.mail.ru/video/embed/9149163570439654893#tioanime#3565",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verMotosierra() {
+        nombreSerie.innerHTML = "CHAINSAW MAN";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "motosierra");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+        "https://www.youtube.com/embed/eyonP1AgC0k"
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verCostura() {
+        nombreSerie.innerHTML = "MY DRESS-UP DARLING🧵";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "costura");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/x10EGZQb#hPyPkRupYPke6aZkNzeb1BTxhZaaDK59NM9nmGoVEo8",
+          "https://mega.nz/embed/st1SmJyI#xDpFOpR9g7eCjPO_9GmG_YyFOzrMOdUCQhbZGEQsUNc",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verJujutsu() {
+        nombreSerie.innerHTML = "JUJUTSU KAISEN";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "jujutsu");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/Mh803CYY#oeFqN_bWjgGhAq6TGbIM4X2Dw6CXJc3JgnPy31RJfL4",
+          "https://mega.nz/embed/5llwQKaA#OdKNKona2aV1yZcDKTYzTkKMOmVP-bFnyQfdb9iddv8",
+          "https://mega.nz/embed/s50Q2Cjb#lLSDMVH25Z5vzKq_xw-L6jX0xWTgbf3CK7CzH4aZ8Ns",
+          "https://mega.nz/embed/0t9i2AxT#9CRdTUt7AkTjVmKlvBAWOaAIsJAL_ACgzekSJCI0gCM",
+          "https://mega.nz/embed/8x0inIZY#dZdddU55vtSY5704yO_u9Z6NTMm6CHmcmn1nQQZNLt4",
+          "https://mega.nz/embed/o9tAjYaL#wbaoS31koqGChB47jZj3sIfaHmVkrnlRHcqn6-cz3Ko",
+          "https://mega.nz/embed/YhtSSArT#R5-tZ_yfoP3u4Ffoxd_HDknV2MQ6qTRIt_CXJXE2C_g",
+          "https://mega.nz/embed/998ikYIT#4UH5GYQyTiMblvGZ_OXdcs5jmGJmHFPxsDv59gW6Ypc",
+          "https://mega.nz/embed/Mk9WCaQT#5Bvba_WXYS0zMAvfOz2HmhcCgvlW9xlHR7T0Q0Pi4Ls",
+          "https://mega.nz/embed/5t0igYRD#ie9MaB1vaXV1WKbM_XDgPYyFh3RKQ0XIHvVfd_4du9M",
+          "https://mega.nz/embed/ltkmBAqD#P5BObYODfPm3as45YZUOJRtUupD87VBkquNW9UvbQFE",
+          "https://mega.nz/embed/50kAnSAB#VxyH-SrN2LR0aWsw6P5CJOjzjtzt9Ah-lm2qjbVNJlI",
+          "https://mega.nz/embed/09kQnYiZ#14AZ9XrK2qx6iMasyrsT5Nu3TtMUCHYigsXFW6iJe8I",
+          "https://mega.nz/embed/ow90wQ5R#rYdm4TJARpv_UtMB8UzPBkMu2LyqvdLbOGq9WchaDuY",
+          "https://mega.nz/embed/IhkUiKgQ#HzmYptFlZQAlRLXC1HJKcZCQjJ5BsVlsOsMW0DQOeEE",
+          "https://mega.nz/embed/8kkwQAZR#wCyVXnv_ZkWxa2bp1WRk7t2S7CRldxaxS9EIYpC8jjM",
+          "https://mega.nz/embed/Ixki1agB#FGHdDJmfrdoOKHsKB5HOGO9VG9D7fBbECYpjf41HoKI",
+          "https://mega.nz/embed/Ux9Sxazb#1OQ4J7c_KcQCMi6DXW8_NXZS_G1ssHbEECTenfXgdoc",
+          "https://mega.nz/embed/UktW1Q6A#mebhry3zG7wfpB21JT0vJR9-E6kjEAIlRE_pjrvmdWU",
+          "https://mega.nz/embed/8k8WlSzY#cJQ5Tj0qwzw3ms-DOuIoVUrr73i_55L76zGfCOLgFGU",
+          "https://mega.nz/embed/Nwl0HYQb#at4VsKdfrHjITqzVkyTK4ncbNC_j0RJ91UlS5IjrjPM",
+          "https://mega.nz/embed/Zh0yTSxL#vmk0mQN112N1i5Ve1d1U4GO3SVjSF-xpE5-E3s9K6aw",
+          "https://mega.nz/embed/wx1yBKga#bZ18bzefhbud4CkUA25Vq8JY5wHPkN9jnrOzDIpK7nc",
+          "https://mega.nz/embed/totk0ABL#GrL0QA0AtVtErAmCJjU1rWBb6MswW4V5TE7fpcr1xDA",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+      function verSlime() {
+        nombreSerie.innerHTML = " ME REENCARNE EN UN SLIME 2º";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "slime");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/t51HDYDa#d3QSXPGycnkfU79G8nn1DZaKXnr5K4B_tcHiDHkdC7U",
+          "https://mega.nz/embed/Yh8VVCTY#834zlkG3mNhYYDXU_oc0S6iynmp0ydo9DlEHE9-irE0",
+          "https://mega.nz/embed/4oVUSZbD#dv0CXo2xMVVlTeXefMEl34YP9zHjZN9Wl98hGkQrqco",
+          "https://mega.nz/embed/ph1nVayR#YYIZvOUxfZYDtmQOw0djjrwdCDDq-FVm1q1mDgS6kaU",
+          "https://mega.nz/embed/Vh0j2aCC#JlN4pGrWnqYJfbPIfrIp264gn2YYHTdt7wJasakEdX4",
+          "https://mega.nz/embed/4hlRQQRJ#3eog1qmXdNm8GPTVuuI24HsY6EFeW3naVZfBoteW6iE",
+          "https://mega.nz/embed/Q9EkgLIb#juWxhiFEQ-Ur769FE41JcKulhHhPAriH0mZ6BTVpVSo",
+          "https://mega.nz/embed/pg8F1Yqa#BqSMv6Rhg0VVZ1iqDY6hTUErtmOj4AUX8eg9NrnEjLM",
+          "https://mega.nz/embed/Ul0wQQRb#C64zMzHfL2zyOD9vaa0aIU55CkQmw5aAfnkY8NEuwhc",
+          "https://mega.nz/embed/p59niQDC#5I6E7unA8ZdxvUQwfo7GTzKCTfl64zBzzDDf3jDrpIM",
+          "https://mega.nz/embed/408xlIaI#VF96FnbKiXFUyyNOl7j1LHyEQ-LRWaXmD2Eqjh8qXIo",
+          "https://mega.nz/embed/9kkH0ITI#Atb4-vLZvIwGUPWA42fVbAtsqvkhFx-aI7bIHW6IIVk",
+          "https://mega.nz/embed/y9Z02D5a#rTHQUoX9-eMCKfwhj2Jw5gmyEhizMjGW3NX9BQr3MZE",
+          "https://mega.nz/embed/0g82BQrC#ttqjIYeUCF0mIK-sLDHggflTgYCv2PhMbd2Xyd3hHrU",
+          "https://mega.nz/embed/SkQAQJgC#DyfTXR77KeVA9fmvoDMflPqRGLqEEzWUo3rmaX9J9r8",
+          "https://mega.nz/embed/GsIQgLqS#MfIVGaO59MdQCvyuKsroEeScb5rfy0lZ5gkSrm0i_W8",
+          "https://mega.nz/embed/OxJkEJCC#zv7o_4lU0M4ciD9JhxIEZDMRfWTJJLTy_VlsqTi4bzg",
+          "https://mega.nz/embed/KkJWAZTA#QSSxsvrvVpCmdy4XALIC4AwEVT4Q7aVeuTxC2bwOQC4",
+          "https://mega.nz/embed/j4AmUbyY#IxbDo8Ig9HypbxJLQMMwjIovyY5oKmhSldXJvu2h7Bg",
+          "https://mega.nz/embed/XgRi2RTJ#93R-R2PVaDvp3Rjud6S3eGhuheS902c4KL71HYIQtj0",
+          "https://mega.nz/embed/PlJimRRI#pS_FvS_o9V0VumGMI_0oBJwKDb_gbqUv8a2IQ9GqEzQ",
+          "https://mega.nz/embed/7xAwjJIK#zz8rxorNLF7FlSFbVUAYb1G3oc78pP0bTzbGDEjp_rg",
+          "https://mega.nz/embed/m8JkHBBT#zhxogdVQdLf3wftsB-HfndgYf83fbBQGVLeIJxAaOuc",
+          "https://mega.nz/embed/LpJE0RwR#VXDvNlrm1bBRxknC-I-tjBSt_gK57B-Hafo3kybNBHw",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+      }
+    </script>
+  </body>
 </html>
