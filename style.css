@@ -3,6 +3,14 @@
   font-family: Roboto, Arial, sans-serif;
   color: grey;
 }
+.motosierra{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://i.pinimg.com/originals/f4/f4/18/f4f41833468f13d65ec0f4ed6bc8d4a0.gif");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
 header{
   width: 100%;
   min-height: 100vh;
@@ -65,6 +73,14 @@ header{
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://c.tenor.com/67p0NLwVW1AAAAAd/jujutsu-kaisen.gif");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.golden{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://c.tenor.com/yn_x5ER_mz4AAAAC/golden-boy-funny.gif");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
