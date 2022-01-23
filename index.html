@@ -15,35 +15,74 @@
   </head>
 
   <body>
+    
     <header id="header">
+      <input type="checkbox" id="menuH" style="display: none" />
+      <div class="hamburger">
+        <label for="menuH" class="_layer -top"></label>
+        <label for="menuH" class="_layer -mid"></label>
+        <label for="menuH" class="_layer -bottom"></label>
+      </div>
+      <nav class="menuppal">
+        <ul>
+          <p>PELICULAS</p>
+          <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
+          <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
+        </ul>
+        <ul>
+          <p>SERIES FINALIZADAS</p>
+          <button class="btn" onclick="verGolden()">
+            GOLDEN <br />
+            BOY
+          </button>
+          <button class="btn" onclick="verJujutsu()">
+            JUJUTSU<br />
+            KAISEN
+          </button>
+    
+          <button class="btn" onclick="verSerie()">
+            BANANA<br />
+            FISH
+          </button>
+          <button class="btn" onclick="verSlime()">ME CONVERTI EN SLIME</button>
+          <button class="btn" onclick="verVikingo()">VINDLAND<br> SAGA</button>
+        </ul>
+        <ul>
+          <p>EN EMISION</p>
+          <button class="btn" onclick="verAnime()">ATTACK ON TITAN</button>
+          <button class="btn" onclick="verOtro()">DEMON <br />SLAYER</button>
+          <button class="btn" onclick="verCostura()">MY DRESS-UP DARLING</button>
+          <button class="btn" onclick="verJujutsu()">
+            JUJUTSU<br />
+            KAISEN
+          </button>
+        </ul>
+        <ul>
+          <p>PROXIMAMENTE</p>
+          <button class="btn" onclick="verMotosierra()">
+            CHAINSAW<br />
+            MAN
+          </button>
+        </ul>
+      </nav>
+     
+    </nav>
       <h1 id="nombreSerie" class="elegantshadow">GLUTTONY TV</h1>
 
       <br />
       <button class="btn" onclick="verAnime()">ATTACK ON TITAN</button>
       <button class="btn" onclick="verOtro()">DEMON <br />SLAYER</button>
-      <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
 
-      <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
-      <button class="btn" onclick="verGolden()">GOLDEN <br> BOY</button>
-      <button class="btn" onclick="verJujutsu()">
-        JUJUTSU<br />
-        KAISEN
-      </button>
-
-      <button class="btn" onclick="verSerie()">
-        BANANA<br />
-        FISH
-      </button>
+      
       <button class="btn" onclick="verCostura()">MY DRESS-UP DARLING</button>
+      <button class="btn" onclick="verVikingo()">VINDLAND<br> SAGA</button>
 
-      <button class="btn" onclick="verSlime()">ME CONVERTI EN SLIME</button>
-      <button class="btn" onclick="verMotosierra()">
-        CHAINSAW<br />
-        MAN
-      </button>
+      
+      
     </header>
     <hr />
     <h1 id="episodio"></h1>
+
     <section>
       <br />
       <div id="botones">
@@ -55,7 +94,7 @@
             id="episodioVer"
           />
         </form>
-        <button class="btn" onclick="cargarVideo()">Ver</button>
+        <button class="btn" id="carga" onclick="cargarVideo()">Ver</button>
         <div class="wrap">
           <button onClick="siguiente()" class="btn">Siguiente episodio</button>
         </div>
@@ -69,6 +108,7 @@
 
     <script type="text/javascript">
       let iframe = document.getElementById("mega");
+      let menu = document.getElementById("menuH");
       let contador = 0;
       let miArray;
       let nombreSerie = document.getElementById("nombreSerie");
@@ -84,6 +124,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function siguiente() {
         iframe.setAttribute("src", miArray[contador + 1]);
@@ -97,7 +138,7 @@
           "Episodio " + contador + "/" + miArray.length;
         contador--;
       }
-
+    
       function cargarVideo() {
         let num = document.getElementById("episodioVer").value;
         if (num <= miArray.length) {
@@ -126,6 +167,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verPeli() {
         nombreSerie.innerHTML = "Millenium Actress";
@@ -139,6 +181,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verGolden() {
         nombreSerie.innerHTML = "GOLDEN BOY";
@@ -147,16 +190,17 @@
         let iframe = document.getElementById("mega");
         contador = 0;
         miArray = [
-        "https://mega.nz/embed/2mxizYpb#AF1VUgCs1XGnoxNO3FC7uwB8ziUAL2vop1xPntw5J28",
-        "https://mega.nz/embed/PvxxAC5T#AIhbywAMH5HDov7EY-F29wCniVIAQVLhw9vPxmM_yq4",
-        "https://mega.nz/embed/eyBC0BSJ#AN-gsgDOkSF9CFKf17Qf7AAfu8sAQO_yfcbCf9eJ4CA",
-        "https://mega.nz/embed/SqgHVJ4J#ABkrlgBOjAeMgxx1Sz0p5QAQNM8ARBH9jOKP8EtWip8",
-        "https://mega.nz/embed/uyACXYrD#AFyNeQB5tbLMADvCwEmhEQBe2lgAYip-zNfjO8CkvR8",
-        "https://mega.nz/embed/rrwFXIxS#W8UjF_G7xYZl4LsMXW9lgo34B0xnHeu_2SAPXIfIl-I"
+          "https://mega.nz/embed/2mxizYpb#AF1VUgCs1XGnoxNO3FC7uwB8ziUAL2vop1xPntw5J28",
+          "https://mega.nz/embed/PvxxAC5T#AIhbywAMH5HDov7EY-F29wCniVIAQVLhw9vPxmM_yq4",
+          "https://mega.nz/embed/eyBC0BSJ#AN-gsgDOkSF9CFKf17Qf7AAfu8sAQO_yfcbCf9eJ4CA",
+          "https://www.youtube.com/embed/9tCYbSdWmVo",
+          "https://www.youtube.com/embed/LDjBfO3Ixxc",
+          "https://www.youtube.com/embed/Lw5MZta408Q",
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verSerie() {
         nombreSerie.innerHTML = "Banana fish";
@@ -199,6 +243,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verPeli2() {
         nombreSerie.innerHTML = "El tiempo contigo";
@@ -212,6 +257,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verMotosierra() {
         nombreSerie.innerHTML = "CHAINSAW MAN";
@@ -219,12 +265,11 @@
         header.setAttribute("class", "motosierra");
         let iframe = document.getElementById("mega");
         contador = 0;
-        miArray = [
-        "https://www.youtube.com/embed/eyonP1AgC0k"
-        ];
+        miArray = ["https://www.youtube.com/embed/eyonP1AgC0k"];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verCostura() {
         nombreSerie.innerHTML = "MY DRESS-UP DARLING🧵";
@@ -235,10 +280,12 @@
         miArray = [
           "https://mega.nz/embed/x10EGZQb#hPyPkRupYPke6aZkNzeb1BTxhZaaDK59NM9nmGoVEo8",
           "https://mega.nz/embed/st1SmJyI#xDpFOpR9g7eCjPO_9GmG_YyFOzrMOdUCQhbZGEQsUNc",
+          "https://mega.nz/embed/QpUjEY5a#d5GXldMCuDXCf3RCyyfoqrTjfcNahCHCkbYojxdJ6-o",
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verJujutsu() {
         nombreSerie.innerHTML = "JUJUTSU KAISEN";
@@ -275,6 +322,7 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
       function verSlime() {
         nombreSerie.innerHTML = " ME REENCARNE EN UN SLIME 2º";
@@ -311,6 +359,21 @@
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
+      }
+      function verVikingo() {
+        nombreSerie.innerHTML = " VINDLAND SAGA";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "vikingo");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
       }
     </script>
   </body>
