@@ -62,6 +62,11 @@
             MAN
           </button>
         </ul>
+        <ul>
+          <p>OPENINGS Y ENDINGS</p>
+          <button class="btn" onclick="verOp()">OP Y ED</button>
+   
+        </ul>
       </nav>
      
     </nav>
@@ -372,6 +377,20 @@
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
+      }
+      function verOp() {
+        nombreSerie.innerHTML = "OPENINGS Y ENDINGS";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "op");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://www.youtube.com/embed/rR_0IlkQXUk",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Opening 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
         menu.checked = false;
       }
