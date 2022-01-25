@@ -146,15 +146,16 @@
     
       function cargarVideo() {
         let num = document.getElementById("episodioVer").value;
+        contador= num-1 ;
         if (num <= miArray.length) {
           document.getElementById("episodio").innerHTML =
             "Episodio " + num + "/" + miArray.length;
           iframe.setAttribute("src", miArray[num - 1]);
-        } else if(num==69 && contador==4){
+        } else if(num==68 ){
           alert("LOGRO DESBLOQUEADO");
           let botones = document.getElementById("botones");
           let boton = `  <div class="wrap">
-          <a href="/buscador.html"><button class="btn">ENLACE SECRETO</button></a>
+          <a href="videos/buscador.html"><button class="btn">ENLACE SECRETO</button></a>
         </div>`;
           botones.innerHTML += boton;
         }else{
