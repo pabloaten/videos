@@ -31,8 +31,19 @@ function updateDom(data){
         searchResults.innerHTML = Object.keys(animeByCategories).map(key=>{
 
             const animesHTML = animeByCategories[key]
-            .sort((a,b)=>a.episodes-b.episodes)
+            .sort((a,b)=>b.score-a.score)
             .map(anime=>{
+               
+                let nombre = anime.url.substring(32);
+                let cadena = nombre.indexOf("/");
+                
+              
+                nombre =nombre.substring(cadena+1,nombre.length);
+                
+                nombre = nombre.replaceAll("_","-");
+                nombre = nombre.replaceAll("--","-");
+                nombre = nombre.toLowerCase();
+                console.log(anime);
                 return `
                     <div class="card">
                         <div class="card-image">
@@ -43,13 +54,14 @@ function updateDom(data){
                             <p>${anime.synopsis}</p>
                         </div>
                         <div class="card-action">
-                            <a href="${anime.url}">Find out more</a>
+                            <a href="https://www.animefenix.com/${nombre}">VER EN ANIMEFENIX</a><br>
+                            <a href="https://www3.animeflv.net/anime/${nombre}">VER EN ANIMEFLV</a>
                         </div>
                     </div>
                 `
             }).join("");
 
-
+           
             return `
                 <section>
                     <h3>${key.toUpperCase()}</h3>
