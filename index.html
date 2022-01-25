@@ -41,6 +41,10 @@
             JUJUTSU<br />
             KAISEN
           </button>
+          <button class="btn" onclick="verPrision()">
+            PRISION<br />
+            SCHOOL
+          </button>
     
           <button class="btn" onclick="verSerie()">
             BANANA<br />
@@ -383,6 +387,36 @@
         let iframe = document.getElementById("mega");
         contador = 0;
         miArray = [
+         
+        
+          
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
+      }
+      function verPrision() {
+        nombreSerie.innerHTML = "PRISION SCHOOL";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "prision");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "https://mega.nz/embed/OFJykSDA#YjuAUcTJnntTC0dlEZVjK93_UJ-QwnvPw0zbCueVx7o",
+          "https://mega.nz/embed/rZRSxYgK#NYtA2Sse0YjSMD5B62bYGJKO6yBhP9sz9cbcIyg2IOw",
+          "https://mega.nz/embed/SdIkBSgC#8sjO6AdurkHPaiAoIohYDZ2viuCVPLAnBQAb8fJi7lI",
+          "https://mega.nz/embed/CUYAGIRD#X6SoFTBCYx2tkbh1e6lf3e15ep761aXLrA_ZbW-pU24",
+          "https://mega.nz/embed/WNRGBQLQ#f-JkHbN-i1b64o3W5AyiZQJMfOgOqjkXlNMCmgVwDaU",
+          "https://mega.nz/embed/uAJACQrZ#tArCQF0IzxNieduvRFPtPstakWCL5g0q69XNjQtwXcU",
+          "https://mega.nz/embed/KNBkCYBS#x-hQxJ7sFiB4oxVLAM_D2jmdIM1tKa4JS5cBfutiWbM",
+          "https://mega.nz/embed/2VIyCaAL#yAAHd8Ftuk9A0jtK42m76hTHIPyZd4TEZTMkCp4RvrQ",
+          "https://mega.nz/embed/eUQQDaDC#_pTOkiaNf9HeDnDBwMl-AuJCGXZ5cZ--3vuEaBpjyRc",
+          "https://mega.nz/embed/LdQmRaLI#rUa0lwdGByhvIKEn9_XkqIPOBIbi43Ffs7B-e0qb0fI",
+          "https://mega.nz/embed/PJISRKZL#5LVt96Na967TFKWqAWLzxf7jbr4yoneXkOLIbRxWZeM",
+          "https://mega.nz/embed/fcJmUAAa#_R2LJ7Bw8H9CHsQ9E2me9c8x2IJr63j2MQmhEVzeCCE",
+          "https://mega.nz/embed/7FZ01AwB#McEL30LNV7K2dQ3_7jYwT4xj-Mw9VNFH4xnfKDoO7GY"
+         
         
           
         ];
