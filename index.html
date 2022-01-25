@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link
@@ -150,7 +150,14 @@
           document.getElementById("episodio").innerHTML =
             "Episodio " + num + "/" + miArray.length;
           iframe.setAttribute("src", miArray[num - 1]);
-        } else {
+        } else if(num==69 && contador==4){
+          alert("LOGRO DESBLOQUEADO");
+          let botones = document.getElementById("botones");
+          let boton = `  <div class="wrap">
+          <a href="/buscador.html"><button class="btn">ENLACE SECRETO</button></a>
+        </div>`;
+          botones.innerHTML += boton;
+        }else{
           alert("error");
         }
       }
@@ -183,6 +190,7 @@
         contador = 0;
         miArray = [
           "https://mega.nz/embed/5w5i0AhC#DEUsBIpRLHjNOL5q6GvemypF0vWVkljL8lrzAqt5oIY",
+          
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
@@ -374,6 +382,8 @@
         let iframe = document.getElementById("mega");
         contador = 0;
         miArray = [
+        <iframe src="https://mega.nz/embed/arI3wayA#hSzqrNMvxga-6tWbUAZYjUAk0TAoF40INwU1oxjjVBk" width="640" height="360" frameborder="0" allowfullscreen></iframe>,
+        <iframe src="https://mega.nz/embed/DjRDwKST#JnA2R-T1ygCRwdb2fwkO5pjdWpSdYsP51sy0__jfdCg" width="640" height="360" frameborder="0" allowfullscreen></iframe>
           
         ];
         document.getElementById("episodio").innerHTML =
