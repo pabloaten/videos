@@ -52,6 +52,10 @@
           </button>
           <button class="btn" onclick="verSlime()">ME CONVERTI EN SLIME</button>
           <button class="btn" onclick="verVikingo()">VINDLAND<br> SAGA</button>
+          <button class="btn" onclick="verGrandBlue()">
+            GRAND<br />
+            BLUE
+          </button>
         </ul>
         <ul>
           <p>EN EMISION</p>
@@ -417,6 +421,33 @@
           "https://mega.nz/embed/fcJmUAAa#_R2LJ7Bw8H9CHsQ9E2me9c8x2IJr63j2MQmhEVzeCCE",
           "https://mega.nz/embed/7FZ01AwB#McEL30LNV7K2dQ3_7jYwT4xj-Mw9VNFH4xnfKDoO7GY"
          
+        
+          
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
+      }
+      function verGrandBlue() {
+        nombreSerie.innerHTML = "GRAND BLUE";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "grandBlue");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+        "https://mega.nz/embed/REtznY5R#Q97k116grSrh9YjTcNMs71yZ5A5D6Xg3QOewHpcaUaQ",
+        "https://mega.nz/embed/5V1XDIBD#E0zW_bRoqxp5d9bNciSxUjgLLJDe8Jt6SgbQa6YfDuc",
+        "https://mega.nz/embed/NQtHFCzC#B9gPyIZpcIMNe22IEbAjjo6LO4NXZ0uv-7-4Fv9DId4",
+        "https://mega.nz/embed/dI11QSzS#19Cgt2asS6IBHtEcpZnnZBr3hc43Yp_HxUGpDxhD1Vo",
+        "https://mega.nz/embed/cUsnxYRC#0XUhRmZwcFZqZ6-bEteCAXKvPmdT_eso_eZAWq78dMI",
+        "https://mega.nz/embed/cRlnwQSQ#Sa8vaV-CUSBdL8kfPOdrkzNPpRc2CIbaLAIE881yixI",
+        "https://mega.nz/embed/gI01DaBT#ScsD5M9zgkIkSNHA9WtqWeNWX84M3B1p7GAai3ggT9s",
+        "https://mega.nz/embed/wBtRFQza#u6WlL11TTmbdelf8GhVPACzoaro2TnBeDqJNVJeLkEQ",
+        "https://mega.nz/embed/A0F2EJZT#ZNTU1RN5b-lb_npYnN_LyF2ku5QaAlEBsXdHk3k9nL4",
+        "https://mega.nz/embed/As12lbKQ#kIfI33myZOt-1CuRnzr6o7axmfKCNE77gZ4cGIDN67I",
+        "https://mega.nz/embed/tx1hEYDK#buQn3_FAVBR4gAc6PDEKt719gfPN1pTrzMYQFkrILGM",
+        "https://mega.nz/embed/gtUjEC6R#2rEpeMhkMIcrAyE6yneJNVOSJqT1E2fvyeEJWZf4HIY"
         
           
         ];

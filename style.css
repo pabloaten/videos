@@ -80,6 +80,15 @@ label{
   background-repeat:no-repeat;
 }
 
+.grandBlue{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(255,250,205,.7),rgb(255,239,213,.5)), url("https://steamuserimages-a.akamaihd.net/ugc/973235725998400982/1ADF95C19E10DC385E8286F5D13B29D7A2DE2275/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
 .prision{
   width: 100%;
   min-height: 100vh;
