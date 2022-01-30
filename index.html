@@ -118,7 +118,7 @@
       <br />
       <iframe id="mega" frameborder="0" allowfullscreen></iframe>
     </section>
-    
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
     <script type="text/javascript">
      
       
@@ -128,18 +128,15 @@
       let miArray;
       let nombreSerie = document.getElementById("nombreSerie");
       function verAnime() {
-        function temp(){
-        let tiempo = document.getElementById("tiempo");
-      let date = new Date(2022, 11, 24, 19, 59, 59, 59);
-      let snk = Date.now()
-      let snk2 = new Date(snk)
-      let difference = snk2.getTime()-date.getTime();
-      
-      tiempo.innerHTML ="Nuevo episodio<br>"+(19-snk2.getHours()+":"+(60-snk2.getMinutes())+":"+(60-snk2.getSeconds()));
-      }
-      setInterval(() => {
-        temp();
-      }, 1000);
+       
+        var fecha1 = Date.now();
+        var fecha2 = moment('2022-02-6');
+        console.log(fecha2.diff(fecha1, 'days'), ' horas de diferencia');
+        let a = fecha2.diff(fecha1, 'days');
+        let tiemp= document.getElementById('tiempo');
+        tiempo.innerHTML = a+" dias para el siguiente episodio";
+        
+
         nombreSerie.innerHTML = "Attack on titan";
         let header = document.getElementById("header");
         header.setAttribute("class", "attack");
