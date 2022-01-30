@@ -94,6 +94,7 @@
     </header>
     <hr />
     <h1 id="episodio"></h1>
+    <h3 id="tiempo"></h3>
 
     <section>
       <br />
@@ -119,19 +120,34 @@
     </section>
     
     <script type="text/javascript">
+     
+      
       let iframe = document.getElementById("mega");
       let menu = document.getElementById("menuH");
       let contador = 0;
       let miArray;
       let nombreSerie = document.getElementById("nombreSerie");
       function verAnime() {
+        function temp(){
+        let tiempo = document.getElementById("tiempo");
+      let date = new Date(2022, 11, 24, 19, 59, 59, 59);
+      let snk = Date.now()
+      let snk2 = new Date(snk)
+      let difference = snk2.getTime()-date.getTime();
+      
+      tiempo.innerHTML ="Nuevo episodio<br>"+(19-snk2.getHours()+":"+(60-snk2.getMinutes())+":"+(60-snk2.getSeconds()));
+      }
+      setInterval(() => {
+        temp();
+      }, 1000);
         nombreSerie.innerHTML = "Attack on titan";
         let header = document.getElementById("header");
         header.setAttribute("class", "attack");
         miArray = [
           "https://mega.nz/embed/8wIjgaZA#OEnJ7hnZ-uMkd_DC1ZWA0kb3etvziTFJdhuVm5RBJg8",
           "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
-          "https://mega.nz/embed/ctdUzbLC#9Xf1ogd59xfLf8S-cCgxHTI08-LspLHu2t1YEZ1QDKc" 
+          "https://mega.nz/embed/ctdUzbLC#9Xf1ogd59xfLf8S-cCgxHTI08-LspLHu2t1YEZ1QDKc",
+          "https://mega.nz/embed/Fh8GXQqA#eRTsqT9URkmeOG3Klb-FBlZ23ONvO4aHHf_qWb81b84",
         ];
         contador = 0;
         document.getElementById("episodio").innerHTML =
@@ -177,14 +193,15 @@
         let iframe = document.getElementById("mega");
         contador = 0;
         miArray = [
-          "https://mega.nz/embed/9sA2CLiT#5ppM7hqWxnuOS2mZymksN4XVN73uT8ZHSfEhqtmyT68",
-          "https://mega.nz/embed/YoJynRjA#NO4ZGoIBmM-oL5U5FzGpo8wxD-mJZAFQCIpzQ5_dNo0",
-          "https://mega.nz/embed/M8pSAIpK#Att79zt_B5AYWIoAsEQVZ9VZXaRwKqUBogUX9Sm1u90",
+          "https://hqq.tv/player/embed_player.php?vid=MzF6dVgzRG9hUklKZWp2SE5YS3FUdz09",
+          "https://hqq.tv/player/embed_player.php?vid=ek5Xa3pBck9XOXdkMEFNaEhsNSszZz09",
+          "https://hqq.tv/player/embed_player.php?vid=aUpBaDkyZ3hQUTNoa3VPZG1GYjNndz09",
           "https://mega.nz/embed/R1RgnbgA#vx3x6JbNbIc5EZn10ur4JxBni0f4oxLEL3eVcxW5HEg",
           "https://mega.nz/embed/kwImQZ7J#FirExKcEKXg_Q_UmORXS_o6UL7UMIW_P4eAhsHyXUCw",
           "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
           "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
           "https://mega.nz/embed/01MUyTYK#rXKwHRbN7nSSGaCXfKkDNhr_DvZQge1IVBFQnDWRd-8",
+          "https://mega.nz/embed/J5lkEQqT#b0hEdi--Ljq4LJEKyyhf5Klcy7sksZY-bHibVzrszhg"
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
@@ -304,6 +321,7 @@
           "https://mega.nz/embed/qfwAWIxB#68VxjHX0GxrxyR3pb7De8Wsx_iqwcS2IfJabQbhL8k8",
           "https://mega.nz/embed/NZQwkLyY#RP5hlb3N2A3uBMbCXyUhjYFgeRFopkTTj5GaQVnxrHA",
           "https://mega.nz/embed/Nxs2EYpJ#O6lI58cwPVlcE8hK7ICNcNQFTGejydEW-a7U8tDAslU",
+          "https://mega.nz/embed/hcs0VKzY#LbDuyEV2XOmNBlywY0bV2EwQGcDAToUZlLSeDxzLw4U",
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
