@@ -29,6 +29,7 @@
           <p>PELICULAS</p>
           <button class="btn" onclick="verPeli2()">EL TIEMPO CONTIGO</button>
           <button class="btn" onclick="verPeli()">MILLENIUM ACTRESS</button>
+          <button class="btn" onclick="verMiss()">MISS<br> HOKUSAI</button>
           
         </ul>
         <ul>
@@ -323,6 +324,21 @@
           "https://mega.nz/embed/NZQwkLyY#RP5hlb3N2A3uBMbCXyUhjYFgeRFopkTTj5GaQVnxrHA",
           "https://mega.nz/embed/Nxs2EYpJ#O6lI58cwPVlcE8hK7ICNcNQFTGejydEW-a7U8tDAslU",
           "https://mega.nz/embed/hcs0VKzY#LbDuyEV2XOmNBlywY0bV2EwQGcDAToUZlLSeDxzLw4U",
+        ];
+        document.getElementById("episodio").innerHTML =
+          "Episodio 1" + "/" + miArray.length;
+        iframe.setAttribute("src", miArray[contador]);
+        menu.checked = false;
+      }
+      function verMiss() {
+        nombreSerie.innerHTML = "MISS HOKUSAI";
+        let header = document.getElementById("header");
+        header.setAttribute("class", "miss");
+        let iframe = document.getElementById("mega");
+        contador = 0;
+        miArray = [
+          "//ok.ru/videoembed/44244929140",
+        
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
