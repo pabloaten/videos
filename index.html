@@ -98,8 +98,15 @@
       
     </header>
     <hr />
+    <div class="c" id="c">
+      <div class="i"><img class="img" src="undefined - Imgur.png"/></div>
+      <div class="s1"></div>
+      <div class="s2"></div>
+      <div class="s3"></div>
+    </div>
     <h1 id="episodio"></h1>
     <h3 id="tiempo"></h3>
+    
 
     <section>
       <br />
@@ -123,10 +130,13 @@
       <br />
       <iframe id="mega" frameborder="0" allowfullscreen></iframe>
     </section>
+   
+
+
     <script src="http://momentjs.com/downloads/moment.min.js"></script>
     <script type="text/javascript">
      
-      
+      let c =  document.getElementById("c").style.display = "none";  
       let iframe = document.getElementById("mega");
       let menu = document.getElementById("menuH");
       let contador = 0;
@@ -150,6 +160,7 @@
           "https://mega.nz/embed/MtpkmR4Q#9yS649UtPDZVpAvWlCWnzesuLsT3qTfJvO90iuaIEn0",
           "https://mega.nz/embed/ctdUzbLC#9Xf1ogd59xfLf8S-cCgxHTI08-LspLHu2t1YEZ1QDKc",
           "https://mega.nz/embed/Fh8GXQqA#eRTsqT9URkmeOG3Klb-FBlZ23ONvO4aHHf_qWb81b84",
+          "https://mega.nz/embed/x00SASia#-JDB-Sd0awk9u8ecyeEs7DG3en1Fc7WKwq3f-m_AP6w"
         ];
         contador = 0;
         document.getElementById("episodio").innerHTML =
@@ -203,12 +214,15 @@
           "https://mega.nz/embed/J4hwhKJT#1bGlVTUTvx_avPn8oZfo6iLenvtp8vExQsDCp-jH9hQ",
           "https://mega.nz/embed/41Y2GLyJ#2MEAoxwdllOm7YwZUU50adGjwwZRhrF3bCPXbL-OoAM",
           "https://mega.nz/embed/01MUyTYK#rXKwHRbN7nSSGaCXfKkDNhr_DvZQge1IVBFQnDWRd-8",
-          "https://mega.nz/embed/J5lkEQqT#b0hEdi--Ljq4LJEKyyhf5Klcy7sksZY-bHibVzrszhg"
+          "https://mega.nz/embed/J5lkEQqT#b0hEdi--Ljq4LJEKyyhf5Klcy7sksZY-bHibVzrszhg",
+          "https://mega.nz/embed/M8lGnAqR#k5ErTCOKWyYlv-As-tB1XaZqedyF_HSgAwAc4fbvu6U"
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
         iframe.setAttribute("src", miArray[contador]);
         menu.checked = false;
+        let c =  document.getElementById("c").style.display = "flex";
+        
       }
       function verPeli() {
         nombreSerie.innerHTML = "Millenium Actress";
@@ -324,6 +338,7 @@
           "https://mega.nz/embed/NZQwkLyY#RP5hlb3N2A3uBMbCXyUhjYFgeRFopkTTj5GaQVnxrHA",
           "https://mega.nz/embed/Nxs2EYpJ#O6lI58cwPVlcE8hK7ICNcNQFTGejydEW-a7U8tDAslU",
           "https://mega.nz/embed/hcs0VKzY#LbDuyEV2XOmNBlywY0bV2EwQGcDAToUZlLSeDxzLw4U",
+         "https://mega.nz/embed/Zo1XgA4a#jQA7Q620gzHrE3STqa-XBBpA2XoPXizP00WnHKJJ7RM"
         ];
         document.getElementById("episodio").innerHTML =
           "Episodio 1" + "/" + miArray.length;
